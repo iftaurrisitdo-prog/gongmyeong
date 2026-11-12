@@ -1,0 +1,143 @@
+/* Shared typography system — CSS pixels; mobile scale at 700px. */
+@font-face {
+  font-family: 'Pretendard'; font-style: normal; font-weight: 100 900;
+  font-display: swap; src: url('assets/fonts/PretendardVariable.woff2') format('woff2');
+}
+:root {
+  --nav-height: 84px;
+  --font-ui: 'Pretendard', sans-serif;
+  --type-display: 64px; --type-title: 36px; --type-subtitle: 24px;
+  --type-body: 18px; --type-ui: 16px; --type-caption: 14px;
+}
+body { font: 400 var(--type-body)/1.7 var(--font-ui); letter-spacing: 0; }
+/* Earlier page-specific font shorthands must not introduce another family. */
+body, body *, body *::before, body *::after { font-family: var(--font-ui) !important; }
+button, input, select, textarea { font-family: var(--font-ui); }
+h1,h2,h3,h4,p { overflow-wrap: anywhere; word-break: keep-all; }
+h1,h2,h3,h4 { text-wrap: balance; }
+p { text-wrap: pretty; }
+p + p { margin-top: 1em; }
+.hero-title h1, .team-intro h1, .process-hero h1 {
+  font-size: var(--type-display); font-weight: 700; line-height: 1.2; letter-spacing: -.02em;
+}
+.section h2, .process-section h2 {
+  font-size: var(--type-title); font-weight: 600; line-height: 1.3; letter-spacing: -.02em;
+}
+.section h3, .process-section h3, .experience-cover h3, .observe-panel h3,
+.intro #guide h2, body > aside h2 {
+  font-size: var(--type-subtitle); font-weight: 600; line-height: 1.4; letter-spacing: -.01em;
+}
+.section p, .process-hero > p, .process-section p, .scenario-panel p,
+.role-card .member-description, .intro #guide p, body > aside p, .observe-panel p {
+  font-size: var(--type-body); font-weight: 400; line-height: 1.7; letter-spacing: 0;
+}
+.statement p:not(.muted), .process-prose .large-copy {
+  font-size: var(--type-subtitle); font-weight: 500; line-height: 1.7; letter-spacing: -.01em;
+}
+.section .muted, .section .note, .process-section .source-note,
+.process-figure figcaption, .process-figure figcaption strong, .process-figure figcaption > span,
+.process-section .process-palette p, .process-palette code,
+.site-footer p, .site-footer > div, .site-footer small, .process-footer p,
+.intro #guide .note, body > aside .note, .research-foot p, .experience-cover p,
+.experience-bottom, .role-card .member-role {
+  font-size: var(--type-caption); font-weight: 400; line-height: 1.6; letter-spacing: 0;
+}
+.site-head nav, .site-head nav .process-menu > a, .process-toggle,
+.team-back, .experience-cover button, .research-foot a, .beyond a,
+.process-down, .process-link, .process-footer > a, .scenario-picker button,
+.intro button, .tools button, .intro #close, body > aside #close {
+  font-size: var(--type-ui); font-weight: 500; line-height: 1.5; letter-spacing: 0;
+}
+.eyebrow, .process-eyebrow, .process-section-head > span, .impact-number,
+.process-tags span, .process-cards article > span, .layer-list article > span,
+.system-flow small, .iteration-log article > span, .scenario-panel > span,
+.process-figure a > span, .team-discipline > h3 > small, .leader-badge,
+.carousel-head, .connection-card > span, .study-caption, .study-center > span,
+.study-center small, .hero-meta, .field-copy, .hero-title > span, .hero-title .english,
+.hero-title p, .hero-bottom, .hero-bottom small, .observation span, .observation small,
+.observe-panel > span, .study-description span, .study-node small, .study-node span,
+.heat-unit, .thermo-ticks, .impact-meter .eyebrow, .impact-meter > small,
+.intro .hint, .intro .hint span, .intro .skip-intro, .intro #continueStory,
+body > .hint, body > .hint span, .edition, .scene, .scene small, #toast {
+  font-size: var(--type-caption); font-weight: 400; line-height: 1.6; letter-spacing: 0;
+}
+.role-card h4, .team-discipline > h3 {
+  font-size: var(--type-subtitle); font-weight: 600; line-height: 1.4; letter-spacing: -.01em;
+}
+.process-palette h3 { font-size: var(--type-ui); font-weight: 600; line-height: 1.5; letter-spacing: 0; }
+.nav-brand, .footer-logo, .brand { font-weight: 600; letter-spacing: 0; }
+.nav-brand > span, .brand span { font-size: var(--type-caption); font-weight: 400; line-height: 1.6; letter-spacing: 0; }
+.process-hero > p { max-width: 640px; }
+.experience-cover button { width: 300px; }
+.site-footer { flex-wrap: wrap; }
+
+.site-head nav { gap: 24px; }
+.process-menu { width: 200px; }
+.connection-card { min-height: 400px; }
+.process-figure figcaption { text-align: left; }
+.section-index, .survey-metrics strong, .impact-meter > strong { font-weight: 600; font-variant-numeric: tabular-nums; }
+.impact-meter > strong { line-height: 1.2; letter-spacing: -.02em; }
+/* The reef's registered hit regions stay in place; callouts grow for readable copy. */
+.reef-study .reef-callout { width: clamp(260px, 24%, 340px); }
+.reef-study .reef-callout > div { padding: 10%; }
+.reef-study .reef-callout small { font-size: var(--type-caption); line-height: 1.6; letter-spacing: 0; white-space: normal; }
+.reef-study .reef-callout h3 { font-size: var(--type-subtitle); font-weight: 600; line-height: 1.4; letter-spacing: -.01em; margin: 12px 0 0; }
+.reef-study .reef-callout p { font-size: var(--type-ui); line-height: 1.7; letter-spacing: 0; margin: 12px 0 0; }
+.reef-study .callout-2 { top: auto; bottom: 4%; }
+.intro .hint { padding: 0 20px; }
+.intro #guide { width: 440px; }
+@media (max-width: 1000px) {
+  .site-head nav { gap: 18px; }
+  .nav-brand > span { display: none; }
+  .process-palette { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .team-intro { grid-template-columns: 1fr; }
+  .team-intro img { max-width: 280px; order: -1; }
+}
+@media (max-width: 700px) {
+  :root { --nav-height: 104px; --type-display: 36px; --type-title: 28px; --type-subtitle: 20px; --type-body: 16px; }
+  .site-head nav { gap: 0; justify-content: space-between; width: 100%; overflow: visible; }
+  .site-head { flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; }
+  .nav-brand { font-size: 24px; line-height: 1.2; }
+  .site-head nav > a, .process-toggle { padding: 6px 0; }
+  .process-toggle { gap: 5px; }
+  .section-heading { gap: 14px; }
+  .section-index { font-size: 36px; }
+  .process-hero h1 { letter-spacing: -.02em; }
+  .process-prose, .process-cards, .figure-pair, .system-flow, .survey-metrics { grid-template-columns: 1fr; }
+  .survey-metrics article { flex-wrap: wrap; }
+  .layer-list article, .iteration-log article { grid-template-columns: 1fr; gap: 12px; }
+  .layer-list p { grid-column: 1; }
+  .process-palette { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .process-figure figcaption { display: block; }
+  .process-figure figcaption > span { display:block; max-width:none; text-align:left; margin-top:6px; }
+  .impact-meter { padding-left: 8px; padding-right: 8px; }
+  .impact-meter > strong { font-size: 36px; }
+  /* Anchor explanatory text in a readable panel above the reef on small screens. */
+  .reef-study .reef-callout {
+    left: 6%; right: 6%; top: 3%; bottom: auto; width: auto; aspect-ratio: auto;
+  }
+  .reef-study .reef-callout > div {
+    border-radius: 12px; padding: 14px 18px; aspect-ratio: auto;
+    height: auto; min-height: 0; background: #031016f5;
+  }
+  .reef-study .reef-callout > div::before, .reef-study .reef-callout i { display:none; }
+  .reef-study .reef-callout h3 { margin-top: 6px; }
+  .reef-study .reef-callout p { margin-top: 6px; }
+  .study-caption { display: none; }
+  .intro #guide { max-height: 78%; padding: 22px; }
+  .intro .hint { font-size: 16px; }
+  .intro .hint span { font-size: 14px; }
+  .process-footer { gap: 20px; }
+}
+@media (max-width: 360px) {
+  .site-head nav { flex-wrap: wrap; justify-content: flex-start; gap: 0 16px; }
+  :root { --nav-height: 132px; }
+  .site-head { --nav-height: 132px; }
+}
+
+/* Restore only the navigation's Chinese title to its original serif setting. */
+.site-head .nav-brand { font-family: serif !important; font-weight:400; letter-spacing:3px; }
+.site-head .nav-brand > span { font-family:var(--font-ui) !important; letter-spacing:0; }
+
+/* Match the footer Chinese wordmark to the original serif branding. */
+.site-footer .footer-logo { font-family:serif !important; font-weight:400; letter-spacing:5px; }

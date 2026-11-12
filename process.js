@@ -1,0 +1,4 @@
+(()=>{
+const phases=[['백화된 바다와 첫 만남','조용한 바다와 백화된 산호 속에서 흰동가리가 시선을 이끕니다. 관람객의 접근이 체험의 시작이 됩니다.'],['손길을 따라 생명이 돌아옵니다','손이 지나간 산호가 색을 되찾고, 회복률이 높아질수록 물고기가 2·4·6·8마리로 늘어납니다. 화면과 진동도 점차 풍부해집니다.'],['복어와의 새로운 만남','산호가 절반 회복되면 복어를 포함해 물고기가 총 10마리가 됩니다. 손으로 복어를 터치하면 몸이 부풉니다.'],['생물로 채워지는 바다','회복률이 60%에서 90%로 높아지면서 물고기가 12·14·16·18마리로 늘어나고, 화면과 진동도 더 풍부해집니다.'],['풍부해진 바다, 그리고 다시 시작','산호가 모두 회복되면 물고기가 20마리가 되고, 회복된 장면을 4초 유지한 뒤 거대 해양생물이 나타납니다. 클라이맥스 이후 6초에 걸쳐 초기 백화 상태로 돌아가는 순환을 설계했습니다.']];
+document.querySelectorAll('[data-phase]').forEach(button=>button.addEventListener('click',()=>{const n=Number(button.dataset.phase);document.querySelectorAll('[data-phase]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelector('#phaseIndex').textContent=`0${n+1} / 0${phases.length}`;document.querySelector('#phaseTitle').textContent=phases[n][0];document.querySelector('#phaseCopy').textContent=phases[n][1];}));
+})();

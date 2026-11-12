@@ -1,0 +1,75 @@
+.team-brand-hero {
+  display: grid;
+  justify-items: center;
+  margin: 0;
+}
+
+.team-intro .team-hero-logo { display: block; width: min(66%, 224px); height: auto; }
+
+.team-brand {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.team-brand h2 { margin: 10px 0 36px; }
+.team-brand h3 { margin: 0; font-size: 20px; }
+.team-brand p { margin: 8px 0 0; color: var(--muted); line-height: 1.65; }
+.team-brand figure { margin: 0; }
+.team-brand figcaption { color: var(--paper); font-weight: 600; }
+
+.brand-anatomy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 7vw, 92px);
+  padding: 0 0 38px;
+}
+
+.brand-symbol-circle, .brand-detail {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+
+.brand-symbol-circle { width: min(100%, 360px); justify-self: center; }
+.brand-symbol-circle img { width: 56%; height: auto; }
+.brand-annotations { display: grid; gap: 36px; }
+.brand-organic { border-left: 1px solid var(--acid); padding-left: 16px; }
+.brand-pixels { display: grid; grid-template-columns: 78px 1fr; gap: 16px; align-items: center; }
+.brand-detail { position: relative; overflow: hidden; }
+.brand-detail img { position: absolute; width: 156%; max-width: none; height: auto; top: 8%; left: -11%; }
+
+.brand-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.brand-spec { padding: 26px 26px 0 0; }
+.brand-spec + .brand-spec { border-left: 1px solid var(--line); padding: 26px 0 0 26px; }
+.brand-evolution, .brand-wordmarks {
+  display: grid;
+  align-items: start;
+  gap: 16px;
+  margin: 20px 0 12px;
+}
+
+.brand-evolution { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); text-align: center; }
+.brand-wordmarks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
+.brand-evolution img, .brand-wordmarks img { display: block; width: 100%; object-fit: contain; margin-bottom: 12px; }
+.brand-evolution img { height: 90px; }
+.brand-wordmarks img { width: min(100%, 224px); height: 90px; object-position: left center; }
+.brand-arrow { color: var(--acid); align-self: start; line-height: 90px; }
+.brand-wordmarks p { font-size: 14px; }
+
+@media (max-width: 700px) {
+  .team-brand-hero { order: -1; padding-block: 12px; }
+  .team-intro .team-hero-logo { width: min(48%, 164px); }
+  .brand-anatomy, .brand-specs { grid-template-columns: 1fr; }
+  .brand-symbol-circle { width: min(78%, 280px); }
+  .brand-spec, .brand-spec + .brand-spec { padding: 22px 0 0; border-left: 0; }
+  .brand-spec + .brand-spec { border-top: 1px solid var(--line); margin-top: 22px; }
+  .brand-wordmarks img { height: 64px; }
+}
